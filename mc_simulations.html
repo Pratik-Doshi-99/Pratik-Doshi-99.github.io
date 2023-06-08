@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Moneyball</title>
+  <title>Simulations</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -80,7 +80,7 @@
             <div class="portfolio-description">
               <h2>Use Case</h2>
               <p>
-                This project explores the applications of Monte Carlo Simulations to analyze stock price trajectories and allocate capital on the basis of their relative performances. 
+                This project explores the applications of Monte Carlo Simulations to analyze stock price trajectories and allocate capital to build high performing investment portfolios. 
               </p>
             </div>
           </div>
@@ -89,35 +89,12 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="portfolio-description">
-              <h2>Design</h2>
+              <h2>Implementation</h2>
               <p>
-                In lieu of its multi-threaded design, the various modules of this app run on their separate threads.
-                The app has the following modules:
-                <ol>
-                  <li>
-                    <strong>User Interface:</strong> The UI is powered by the <a href="https://docs.python.org/3/library/tkinter.html" target="_blank">Tkinter</a> library. The app's main thread is dedicated to reading
-                    user gestures on this interface. This thread executes all event listeners associated with the various UI elements like buttons and text boxes.
-                  </li>
-                  <li>
-                    <strong>The Rule Book:</strong> The <i>Rule Book</i> is a <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html" target="_blank">Pandas Dataframe</a> that saves all the active rules that the system is monitoring. 
-                    Each rule is basically a price condition on a particular security. The system is supposed to trade whenever the price of that security meets that condition.
-                    When a condition is met, the trade corresponding to that rule is placed and that rule is moved to the <i>Execution Book</i>. A separate thread monitors the execution status of that trade in the <i>Execution Book</i>.
-                    When the trade is successfully executed at the stock exchange, that thread moves that rule to the <i>Open Book</i>. A third thread monitors the rules in the <i>Open Book</i> and checks if their exit conditions are met.
-                    When an exit condition is met, another offsetting trade is placed to exit the open position created by the first trade. Once the exit trade is placed, the rule re enters the <i>Execution Book</i>.
-                    When that trade is executed, that rule is finally moved back into the original <i>Rule Book</i>. This way the cycle continues till the time the user manually deactivates a rule.
-                  </li>
-                  <li>
-                    <strong>Stock Broker Connection:</strong> The system is connected to <a href="https://zerodha.com/" target="_blank">Zerodha</a>  via the <a href="https://kite.trade/" target="_blank">Kite Connect APIs</a>. The system receives 
-                    real-time price updates, places orders and monitors execution status of these orders via these APIs.
-                  </li>
-                </ol>
+                In this project, I modelled stock price as a <a href="https://www.investopedia.com/articles/07/montecarlo.asp">Geometric Brownian Motion</a> process and ran simulations to observe price movements of 4 different stocks listed on the National Stock Exchange (NSE).
+                For each stock, a million simulations were run to analyze performance over a 10 year period. On the basis of performance observed, weights were assigned to each stock in order to build a portfolio.
+                This portfolio generated a return of 14.98% annually from November 2018 to June 2023. Interestingly, the entire market made only 12.64% in the same period.
                 
-              </p>
-            </div>
-            <div class="portfolio-description">
-              <h2>Challenges and Lessons</h2>
-              <p>
-                ABCD
               </p>
             </div>
           </div>
