@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Moneyball</title>
+  <title>Volatility Forecasting</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -73,57 +73,60 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Moneyball</h3>
+              <h3>Volatility Forecasting</h3>
               <ul>
-                <li><strong>Category</strong>: Desktop App</li>
-                <li><strong>Technologies</strong>: Python, Tkinter, Pandas, Multithreading</li>
-                <li><strong>Project date</strong>: November, 2020</li>
+                <li><strong>Category</strong>: Research Project</li>
+                <li><strong>Technologies</strong>: Python, Statistical Modelling, Time Series Analysis, Regression Analysis, Pandas, Numpy, Matplotlib, Arch</li>
+                <li><strong>Project date</strong>: April, 2021</li>
+                <li><strong><a href="https://pratik-doshi-99.github.io/projects/Volatility_Forecasting.pdf" target="_blank">Research Paper Link</a></strong></li>
                 <!--<li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>-->
               </ul>
             </div>
             <div class="portfolio-description">
               <h2>Use Case</h2>
               <p>
-                This app was developed for a part-time financial trader. The client traded in volatile derivative contracts and was
-                exposed to the risk of adverse price movement when he was away from the trading desk. This application solves that
-                problem for him by monitoring prices and automatically hedging his open positions when the market moves against him.
+                This is a research project that introducesa new method of forecasting volatility in financial markets. 
+                It builds on existing research on Volatility Forecasting Techniques like GARCH and Implied Volatility of Option 
+                Contracts and proposes a novel method of combining the two methods to devise a more accurate forecast. 
               </p>
             </div>
           </div>
 
         </div>
+        <!--<div class="row">
+          <div class="col-lg-12">
+            <div class="portfolio-description">
+              <h2>Intuition</h2>
+              <p>
+                We found that implied volatility tends to overestimate future volatility while GARCH tends to underestimate it. We then 
+                proceed to use market returns to assign weights to individual estimates. Overall, we were successful in building 
+                a technique that statistically outperformed both the estimates individually.
+              </p>
+            </div>
+          </div>
+        </div>-->
+
         <div class="row">
           <div class="col-lg-12">
             <div class="portfolio-description">
-              <h2>Design</h2>
+
+              <h2>Abstract</h2>
               <p>
-                In lieu of its multi-threaded design, the various modules of this app run on their separate threads.
-                The app has the following modules:
-                <ol>
-                  <li>
-                    <strong>User Interface:</strong> The UI is powered by the <a href="https://docs.python.org/3/library/tkinter.html" target="_blank">Tkinter</a> library. The app's main thread is dedicated to reading
-                    user gestures on this interface. This thread executes all event listeners associated with the various UI elements like buttons and text boxes.
-                  </li>
-                  <li>
-                    <strong>The Rule Book:</strong> The <i>Rule Book</i> is a <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html" target="_blank">Pandas Dataframe</a> that saves all the active rules that the system is monitoring. 
-                    Each rule is basically a price condition on a particular security. The system is supposed to trade whenever the price of that security meets that condition.
-                    When a condition is met, the trade corresponding to that rule is placed and that rule is moved to the <i>Execution Book</i>. A separate thread monitors the execution status of that trade in the <i>Execution Book</i>.
-                    When the trade is successfully executed at the stock exchange, that thread moves that rule to the <i>Open Book</i>. A third thread monitors the rules in the <i>Open Book</i> and checks if their exit conditions are met.
-                    When an exit condition is met, another offsetting trade is placed to exit the open position created by the first trade. Once the exit trade is placed, the rule re enters the <i>Execution Book</i>.
-                    When that trade is executed, that rule is finally moved back into the original <i>Rule Book</i>. This way the cycle continues till the time the user manually deactivates a rule.
-                  </li>
-                  <li>
-                    <strong>Stock Broker Connection:</strong> The system is connected to <a href="https://zerodha.com/" target="_blank">Zerodha</a>  via the <a href="https://kite.trade/" target="_blank">Kite Connect APIs</a>. The system receives 
-                    real-time price updates, places orders and monitors execution status of these orders via these APIs.
-                  </li>
-                </ol>
-                
-              </p>
-            </div>
-            <div class="portfolio-description">
-              <h2>Challenges and Lessons</h2>
-              <p>
-                ABCD
+                Numerous models have been developed for forecasting volatility, some of the most popular ones 
+                being Implied Volatility (IV) and GARCH which work best in highly volatile and less volatile 
+                markets respectively. Therefore, this paper introduces a novel dynamic model which combines IV 
+                and GARCH into a single model that combines the strengths of both the models to provide all-round 
+                superior forecasting. This study compares the performance of individual IV and GARCH models 
+                against the Combined IV and GARCH(1,1) model on one month At-The-Money NIFTY50 options contracts 
+                over the past 10 years and finds that the combined model outperforms the individual models. This 
+                model can be used along with delta neutral options trading strategies to buy (sell) undervalued 
+                (overvalued) strategies by comparing the prices derived from this model against the market prices.
+
+                <br>
+                <br>
+                Here is the link to the <a href="https://pratik-doshi-99.github.io/projects/Volatility_Forecasting.pdf" target="_blank">Research Paper</a>
+                <br>
+                Here is sample code used for <a href="https://colab.research.google.com/drive/1SAFYBpbA6zrUB6vu4HdRzgtDHg570E3X?usp=sharing" target="_blank">Calculating GARCH on Rolling Basis</a>
               </p>
             </div>
           </div>
