@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Moneyball</title>
+  <title>Stock Stats</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -65,61 +65,27 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Moneyball</h3>
+              <h3>Stock Stats Compiler</h3>
               <ul>
                 <li><strong>Category</strong>: Desktop App</li>
-                <li><strong>Technologies</strong>: Python, Tkinter, Pandas, Multithreading</li>
-                <li><strong>Project date</strong>: November, 2020</li>
+                <li><strong>Technologies</strong>: Java, javax, Web Scraping, Multithreading</li>
+                <li><strong>Project date</strong>: April, 2020</li>
+                <li><strong><a href="https://pratik-doshi-99.github.io/projects/StatCompiler_Build.zip" target="_blank">Download JAR here</a></strong></li>
                 <!--<li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>-->
               </ul>
             </div>
             <div class="portfolio-description">
               <h2>Use Case</h2>
               <p>
-                This app was developed for a part-time financial trader. The client traded in volatile derivative contracts and was
-                exposed to the risk of adverse price movement when he was away from the trading desk. This application solves that
-                problem for him by monitoring prices and automatically hedging his open positions when the market moves against him.
+                This Desktop Application is built on top of a web scraping framework I developed, to download daily price data for listed Indian stocks.
+                This app uses the framework to download data for multiple stocks, calculates price statictics for those stocks and organizes all the data in an output file. This output
+                file furnishes information that is used by traders to make buy/sell decisions, and determine stop loss levels.
               </p>
             </div>
           </div>
 
         </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="portfolio-description">
-              <h2>Design</h2>
-              <p>
-                In lieu of its multi-threaded design, the various modules of this app run on their separate threads.
-                The app has the following modules:
-                <ol>
-                  <li>
-                    <strong>User Interface:</strong> The UI is powered by the <a href="https://docs.python.org/3/library/tkinter.html" target="_blank">Tkinter</a> library. The app's main thread is dedicated to reading
-                    user gestures on this interface. This thread executes all event listeners associated with the various UI elements like buttons and text boxes.
-                  </li>
-                  <li>
-                    <strong>The Rule Book:</strong> The <i>Rule Book</i> is a <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html" target="_blank">Pandas Dataframe</a> that saves all the active rules that the system is monitoring. 
-                    Each rule is basically a price condition on a particular security. The system is supposed to trade whenever the price of that security meets that condition.
-                    When a condition is met, the trade corresponding to that rule is placed and that rule is moved to the <i>Execution Book</i>. A separate thread monitors the execution status of that trade in the <i>Execution Book</i>.
-                    When the trade is successfully executed at the stock exchange, that thread moves that rule to the <i>Open Book</i>. A third thread monitors the rules in the <i>Open Book</i> and checks if their exit conditions are met.
-                    When an exit condition is met, another offsetting trade is placed to exit the open position created by the first trade. Once the exit trade is placed, the rule re enters the <i>Execution Book</i>.
-                    When that trade is executed, that rule is finally moved back into the original <i>Rule Book</i>. This way the cycle continues till the time the user manually deactivates a rule.
-                  </li>
-                  <li>
-                    <strong>Stock Broker Connection:</strong> The system is connected to <a href="https://zerodha.com/" target="_blank">Zerodha</a>  via the <a href="https://kite.trade/" target="_blank">Kite Connect APIs</a>. The system receives 
-                    real-time price updates, places orders and monitors execution status of these orders via these APIs.
-                  </li>
-                </ol>
-                
-              </p>
-            </div>
-            <div class="portfolio-description">
-              <h2>Challenges and Lessons</h2>
-              <p>
-                ABCD
-              </p>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section><!-- End Portfolio Details Section -->
 
