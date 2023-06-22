@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Moneyball</title>
+  <title>Clustering and Classification</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -55,6 +55,11 @@
                 </div>
 
                 <div class="swiper-slide">
+                  <img src="assets/img/portfolio/cluster_r2.PNG" alt="">
+                </div>
+
+
+                <div class="swiper-slide">
                   <img src="assets/img/portfolio/cluster_sse.png" alt="">
                 </div>
 
@@ -65,61 +70,31 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Moneyball</h3>
+              <h3>Clustering and Classification</h3>
               <ul>
-                <li><strong>Category</strong>: Desktop App</li>
-                <li><strong>Technologies</strong>: Python, Tkinter, Pandas, Multithreading</li>
-                <li><strong>Project date</strong>: November, 2020</li>
+                <li><strong>Category</strong>: Research Project</li>
+                <li><strong>Technologies</strong>: Python, Machine Learning, sklearn, statsmodels, Linear Regression, Decision Trees, Random Forests, K-means Clustering</li>
+                <li><strong>Project date</strong>: February, 2023</li>
+                <li>
+                  <strong><a href="https://colab.research.google.com/drive/1rbqs_0wI18WpMPeUW6rJ9kxc89YjrD6w?usp=sharing" target="_blank">Project Codebase Here</a></strong>
+                </li>
                 <!--<li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>-->
               </ul>
             </div>
             <div class="portfolio-description">
               <h2>Use Case</h2>
               <p>
-                This app was developed for a part-time financial trader. The client traded in volatile derivative contracts and was
-                exposed to the risk of adverse price movement when he was away from the trading desk. This application solves that
-                problem for him by monitoring prices and automatically hedging his open positions when the market moves against him.
+                This research project seeks to improve prediction accuracy in Regression based Machine Learning models by introducing intermediate
+                clustering. In the project, various experiments are performed to see if clustering boosts prediction accuracy. First we fit a model 
+                on the entire training set and treat it as the baseline. Then we use a subset of the variables to cluster the training set and then 
+                fit individual models in each cluster to check if those models perform better than the baseline model. In this direction we use 
+                different models like Linear Regression, Decision Trees and Random Forests.
               </p>
             </div>
           </div>
 
         </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="portfolio-description">
-              <h2>Design</h2>
-              <p>
-                In lieu of its multi-threaded design, the various modules of this app run on their separate threads.
-                The app has the following modules:
-                <ol>
-                  <li>
-                    <strong>User Interface:</strong> The UI is powered by the <a href="https://docs.python.org/3/library/tkinter.html" target="_blank">Tkinter</a> library. The app's main thread is dedicated to reading
-                    user gestures on this interface. This thread executes all event listeners associated with the various UI elements like buttons and text boxes.
-                  </li>
-                  <li>
-                    <strong>The Rule Book:</strong> The <i>Rule Book</i> is a <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html" target="_blank">Pandas Dataframe</a> that saves all the active rules that the system is monitoring. 
-                    Each rule is basically a price condition on a particular security. The system is supposed to trade whenever the price of that security meets that condition.
-                    When a condition is met, the trade corresponding to that rule is placed and that rule is moved to the <i>Execution Book</i>. A separate thread monitors the execution status of that trade in the <i>Execution Book</i>.
-                    When the trade is successfully executed at the stock exchange, that thread moves that rule to the <i>Open Book</i>. A third thread monitors the rules in the <i>Open Book</i> and checks if their exit conditions are met.
-                    When an exit condition is met, another offsetting trade is placed to exit the open position created by the first trade. Once the exit trade is placed, the rule re enters the <i>Execution Book</i>.
-                    When that trade is executed, that rule is finally moved back into the original <i>Rule Book</i>. This way the cycle continues till the time the user manually deactivates a rule.
-                  </li>
-                  <li>
-                    <strong>Stock Broker Connection:</strong> The system is connected to <a href="https://zerodha.com/" target="_blank">Zerodha</a>  via the <a href="https://kite.trade/" target="_blank">Kite Connect APIs</a>. The system receives 
-                    real-time price updates, places orders and monitors execution status of these orders via these APIs.
-                  </li>
-                </ol>
-                
-              </p>
-            </div>
-            <div class="portfolio-description">
-              <h2>Challenges and Lessons</h2>
-              <p>
-                ABCD
-              </p>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section><!-- End Portfolio Details Section -->
 
